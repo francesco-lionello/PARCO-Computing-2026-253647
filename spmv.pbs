@@ -1,0 +1,20 @@
+#!/bin/bash
+#PBS -N spmv_job            
+#PBS -l select=1:ncpus=32   
+#PBS -l walltime=00:30:00   
+#PBS -q short_cpuQ          
+#PBS -o spmv.out            
+#PBS -e spmv.err     
+
+# directory submit job
+cd $PBS_O_WORKDIR
+
+# Load module
+module load gcc-9.1.0
+
+# Compile
+make clean
+make spmv
+
+# Bench matrix
+make bench > results.txt
