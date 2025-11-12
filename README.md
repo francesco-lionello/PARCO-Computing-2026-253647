@@ -13,8 +13,7 @@ The objectives are:
 
 ## How to Run on the UniTN HPC Cluster
 
-⚠️ Note: The matrix Spielman_k200.mtx is compressed as Spielman_k200.rar
-because it exceeds GitHub’s 100 MB limit.
+⚠️ Note: The matrix Spielman_k200.mtx is compressed as Spielman_k200.rarbecause it exceeds GitHub’s 100 MB limit.
 Before submit the job, extract it.
 
 ### Submit the job
@@ -23,10 +22,10 @@ Before submit the job, extract it.
 qsub spmv.pbs
 ```  
 
-### Check the job output
-spmv.out     # standard output
-spmv.err     # error
-results.txt  # performance results
+### 📂 Check the job outputs
+- `spmv.out` → standard output  
+- `spmv.err` → error 
+- `results.txt` → performance results
 
 
 ### Generate Plots
@@ -36,7 +35,7 @@ module load python-3.10.14_gcc91
 python3 plot_scaling.py results.txt
 ```  
 
-##Repository Structure
+## Repository Structure
 ```
 ├── makefile                 # build & run commands
 ├── spmv.c                   # Sequential + OpenMP implementation
@@ -47,3 +46,6 @@ python3 plot_scaling.py results.txt
 ├── plot/                    # generated plots
 └── lionello-253647-D1.pdf   # project report
 ```
+---
+
+
